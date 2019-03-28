@@ -38,6 +38,7 @@ It will help you factor out reusable attributes of your views.
 ## Migrating from elm/html
 
 All you need to do for migrating from elm/html is just replacing dependencies in your `elm.json` to `arowM/html`.
+Then compiler would claim you to add "indirect" dependencies when trying to compile.
 
 Let's see you have following `elm.json` file:
 
@@ -63,9 +64,26 @@ In this case, just replace "elm/html" with "arowM/html":
         "arowM/html": "1.0.0 <= v < 2.0.0",
         "elm/json": "1.1.3 <= v < 2.0.0"
     },
+}
+```
+
+The compiler would claim you to add some indirect dependencies.
+
+```
+{
+    ...
+    "indirect": {
+        ...
+        "arowM/elm-html-internal": "1.0.0",
+        "elm/html": "1.0.0"
+    }
     ...
 }
 ```
+
+It's all!
+
+Make sure to remove `elm-stuff` directory before compiling to avoid build errors.
 
 ## Other things
 
