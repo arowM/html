@@ -3,7 +3,7 @@
     "name": "arowM/html",
     "summary": "An elm/html alternative which enables you to batch attributes.",
     "license": "MIT",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "exposed-modules": {
         "HTML": [
             "Html",
